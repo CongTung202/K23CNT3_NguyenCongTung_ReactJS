@@ -67,3 +67,13 @@ const [a, b] = arraya;
 console.log("a: ", a);
 console.log("b: ", b);
 console.log("arr: =", arraya);
+// people
+const objectPeople = {
+  name: "BokaChan",
+  age: 18,
+  address: "Tokyo",
+};
+const { name, age } = objectPeople;
+console.log("Name: ", name);
+console.log("Age: ", age);
+console.log(objectPeople);

@@ -1,6 +1,6 @@
 import logo from "./crossover.jpg";
 import "./App.css";
-import nctCompo from "./components/nctCompo";
+import NctCompo from "./components/nctCompo";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <h1>NguyenCongTung-K23CNT3-React</h1>
-      <nctCompo />
+      <NctCompo nctName="Tung 123" nctAddress="Het Cuu" />
     </div>
   );
 }

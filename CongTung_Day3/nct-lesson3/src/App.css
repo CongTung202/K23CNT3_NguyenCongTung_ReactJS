@@ -1,0 +1,36 @@
+.App {
+  text-align: start;
+}
+.header {
+  background-color: #00fff2;
+  color: hotpink;
+  padding: 20px;
+  min-height: 30px;
+  text-align: center;
+}
+.Title {
+  text-align: center;
+  color: blueviolet;
+}
+.Class,
+.Func,
+.JSX {
+  color: yellowgreen;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

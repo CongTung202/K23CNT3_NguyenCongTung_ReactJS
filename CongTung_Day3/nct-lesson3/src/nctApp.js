@@ -17,7 +17,9 @@ function NctApp() {
       <div className="header">
         <h1>K23CNT3-Nguyen Cong Tung</h1>
       </div>
-      <h2 className="Title">Boka Chan</h2>
+      <h2 className="Title" style={{ color: "yellow" }}>
+        Boka Chan
+      </h2>
       <div className="container border mt-1">
         <div className="wrap-1">
           <NctJSX className="JSX" />

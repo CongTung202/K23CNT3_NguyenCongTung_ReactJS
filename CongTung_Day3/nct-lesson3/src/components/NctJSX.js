@@ -17,14 +17,15 @@ export default function NctJSX() {
   const element = (
     <div>
       {/*bieu thuc jsx giong ben duoi*/}
-      <h3>{fullName(user)}</h3>
-
-      <h3>Chào Mừng {name} đến với Bình Dương vô vọng</h3>
+      <h3 style={{ color: "white" }}>{fullName(user)}</h3>
+      <h3 style={{ color: "white" }}>
+        Chào Mừng {name} đến với Bình Dương vô vọng
+      </h3>
     </div>
   );
   //ham chao
   const sayHello = (name) => {
-    const titleStyle = { color: "red" };
+    const titleStyle = { color: "white" };
     if (name) {
       return (
         <h3 style={titleStyle}>Chào Mừng {name} đến với Bình Dương vô vọng</h3>
@@ -40,7 +41,7 @@ export default function NctJSX() {
   return (
     <div>
       <h1>
-        <center>NctJSX-Expression</center>
+        <center style={{ color: "white" }}>NctJSX-Expression</center>
       </h1>
       {/*Su Dung Bien Element */}
       {element}

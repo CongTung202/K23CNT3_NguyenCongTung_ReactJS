@@ -4,6 +4,9 @@ import NctClassEventForm2 from "./components/NctClassEventForm2";
 import NctClassEventForm3 from "./components/NctClassEventForm3";
 import NctClassEventForm4 from "./components/NctClassEventForm4";
 import NctClassEventForm5 from "./components/NctClassEventForm5";
+import NctClassEventForm6 from "./components/NctClassEventForm6";
+import NctClassLoginControl1 from "./components/NctClassLoginControl1";
+import NctRenderListObject from "./components/NctRenderListObject";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <NctClassEventForm3 />
         <NctClassEventForm4 />
         <NctClassEventForm5 />
+        <NctClassEventForm6 />
+        <NctRenderListObject />
+        <NctClassLoginControl1 />
       </div>
     </div>
   );

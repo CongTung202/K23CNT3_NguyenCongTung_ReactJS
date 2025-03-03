@@ -7,6 +7,7 @@ import NctClassEventForm5 from "./components/NctClassEventForm5";
 import NctClassEventForm6 from "./components/NctClassEventForm6";
 import NctClassLoginControl1 from "./components/NctClassLoginControl1";
 import NctRenderListObject from "./components/NctRenderListObject";
+import NctRenderListObjectIphone from "./components/NctRenderListObjectIphone";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <NctClassEventForm6 />
         <NctRenderListObject />
         <NctClassLoginControl1 />
+        <NctRenderListObjectIphone />
       </div>
     </div>
   );

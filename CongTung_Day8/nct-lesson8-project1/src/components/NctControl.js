@@ -1,13 +1,19 @@
+// NctControl.js
 import React, { Component } from "react";
 
 export default class NctControl extends Component {
   render() {
+    const { onAddNewStudent } = this.props; // Nhận hàm từ props
     return (
       <div>
         <div className="card-header">
           <div className="row">
             <div className="col-3 ">
-              <button type="button" className="btn btn-primary btn-icon-text">
+              <button
+                type="button"
+                className="btn btn-primary btn-icon-text"
+                onClick={onAddNewStudent} // Gọi hàm thêm mới
+              >
                 Thêm mới sinh viên
               </button>
             </div>

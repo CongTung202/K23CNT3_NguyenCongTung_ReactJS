@@ -1,16 +1,24 @@
+// NctStudentList.js
 import React, { Component } from "react";
 import NctStudent from "./NctStudent";
 
 export default class NctStudentList extends Component {
   render() {
-    const { renderNctStudent, onNctHandleView } = this.props;
+    const {
+      renderNctStudent,
+      onNctHandleView,
+      onNctHandleEdit,
+      onNctHandleDelete,
+    } = this.props;
     const nctElementStudent = renderNctStudent.map((nctItem, index) => {
       return (
         <NctStudent
-          key={nctItem.nctID} // Assuming nctItem has a unique id
+          key={nctItem.nctID}
           renderNctStudent={nctItem}
           onNctHandleView={onNctHandleView}
-          index={index + 1} // For displaying the index
+          onNctHandleEdit={onNctHandleEdit} // Thêm hàm chỉnh sửa
+          onNctHandleDelete={onNctHandleDelete} //xóa
+          index={index + 1}
         />
       );
     });

@@ -1,21 +1,77 @@
+// NctForm.js
 import React, { Component } from "react";
 
 export default class NctForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nctID: "",
+      nctStudentName: "",
+      nctAge: "",
+      nctGender: "Nam",
+      nctDayOfBirth: "",
+      nctNoiSinh: "",
+      nctAddress: "",
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.student !== this.props.student) {
+      const { student } = this.props;
+      if (student) {
+        this.setState({ ...student });
+      } else {
+        // Reset state khi thêm mới
+        this.setState({
+          nctID: "",
+          nctStudentName: "",
+          nctAge: "",
+          nctGender: "Nam",
+          nctDayOfBirth: "",
+          nctNoiSinh: "",
+          nctAddress: "",
+        });
+      }
+    }
+  }
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  // NctForm.js
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { updateStudent } = this.props;
+    updateStudent(this.state); // Gọi hàm cập nhật với thông tin sinh viên đã chỉnh sửa
+  };
+
   render() {
-    const { student } = this.props;
+    const {
+      nctID,
+      nctStudentName,
+      nctAge,
+      nctGender,
+      nctDayOfBirth,
+      nctNoiSinh,
+      nctAddress,
+    } = this.state;
     return (
       <>
         <div className="card">
           <div className="card-body">
             <h3 className="card-title">Thông tin sinh viên</h3>
-            <form className="form-sample">
+            <form className="form-sample" onSubmit={this.handleSubmit}>
               <div className="form-group row">
                 <label className="col-sm-3 col-form-label">Mã sinh viên</label>
                 <div className="col-sm-9">
                   <input
                     type="text"
-                    value={student ? student.nctID : ""}
+                    name="nctID"
+                    value={nctID}
                     className="form-control"
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -24,8 +80,10 @@ export default class NctForm extends Component {
                 <div className="col-sm-9">
                   <input
                     type="text"
-                    value={student ? student.nctStudentName : ""}
+                    name="nctStudentName"
+                    value={nctStudentName}
                     className="form-control"
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -34,8 +92,10 @@ export default class NctForm extends Component {
                 <div className="col-sm-9">
                   <input
                     type="text"
-                    value={student ? student.nctAge : ""}
+                    name="nctAge"
+                    value={nctAge}
                     className="form-control"
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -43,11 +103,13 @@ export default class NctForm extends Component {
                 <label className="col-sm-3 col-form-label">Giới tính</label>
                 <div className="col-sm-9">
                   <select
-                    value={student ? student.nctGender : ""}
+                    name="nctGender"
+                    value={nctGender}
                     className="form-control"
+                    onChange={this.handleChange}
                   >
                     <option value={"Nam"}>Nam</option>
-                    <option value={"Nu"}>Nữ</option>
+                    <option value={"Nữ"}>Nữ</option>
                   </select>
                 </div>
               </div>
@@ -56,8 +118,10 @@ export default class NctForm extends Component {
                 <div className="col-sm-9">
                   <input
                     className="form-control"
-                    value={student ? student.nctDayOfBirth : ""}
+                    name="nctDayOfBirth"
+                    value={nctDayOfBirth}
                     placeholder="dd/mm/yyyy"
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
@@ -65,8 +129,10 @@ export default class NctForm extends Component {
                 <label className="col-sm-3 col-form-label">Nơi sinh</label>
                 <div className="col-sm-9">
                   <select
-                    value={student ? student.nctNoiSinh : ""}
+                    name="nctNoiSinh"
+                    value={nctNoiSinh}
                     className="form-control"
+                    onChange={this.handleChange}
                   >
                     <option>Hà Nội</option>
                     <option>TP. Hồ Chí Minh</option>
@@ -79,8 +145,10 @@ export default class NctForm extends Component {
                 <label className="col-sm-3 col-form-label">Địa chỉ</label>
                 <div className="col-sm-9">
                   <textarea
+                    name="nctAddress"
                     className="form-control"
-                    value={student ? student.nctAddress : ""}
+                    value={nctAddress}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>

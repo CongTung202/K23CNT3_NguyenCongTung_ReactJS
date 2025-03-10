@@ -1,8 +1,15 @@
+// NctStudent.js
 import React, { Component } from "react";
 
 export default class NctStudent extends Component {
   render() {
-    const { renderNctStudent, onNctHandleView, index } = this.props;
+    const {
+      renderNctStudent,
+      onNctHandleView,
+      onNctHandleEdit,
+      onNctHandleDelete,
+      index,
+    } = this.props;
     return (
       <tr>
         <td>{index}</td>
@@ -14,15 +21,23 @@ export default class NctStudent extends Component {
           <div className="template-demo">
             <button
               type="button"
-              className="btn btn-danger btn-icon-text"
+              className="btn btn-primary btn-icon-text"
               onClick={() => onNctHandleView(renderNctStudent)}
             >
               Xem
             </button>
-            <button type="button" className="btn btn-warning btn-icon-text">
+            <button
+              type="button"
+              className="btn btn-warning btn-icon-text"
+              onClick={() => onNctHandleEdit(renderNctStudent)} // Gọi hàm chỉnh sửa
+            >
               Sửa
             </button>
-            <button type="button" className="btn btn-success btn-icon-text">
+            <button
+              type="button"
+              className="btn btn-danger btn-icon-text" // Thay đổi màu cho nút xóa
+              onClick={() => onNctHandleDelete(renderNctStudent.nctID)} // Gọi hàm xóa
+            >
               Xóa
             </button>
           </div>

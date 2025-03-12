@@ -33,11 +33,11 @@ const NctApp = () => {
       <h1>Nguyễn Công Tùng-K23CNT3</h1>
       <div className="container-fluid mt-3">
         <div className="row">
-          <div className="col-lg-6 grid-margin stretch-card">
-            <NctProductAdd onAddProduct={nctHandleAddProduct} />
-          </div>
-          <div className="col-5 grid-margin">
+          <div className="col-7 grid-margin">
             <NctProductList products={nctProduct} />
+          </div>
+          <div className="col-lg-5 grid-margin stretch-card">
+            <NctProductAdd onAddProduct={nctHandleAddProduct} />
           </div>
         </div>
       </div>

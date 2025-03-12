@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NctControl from "./components/NctControl";
 import NctStudentList from "./components/NctStudentList";
 import NctForm from "./components/NctForm";
+import NctUseMemo from "./components/NctUseEmo";
 
 export default class NctApp extends Component {
   constructor(props) {
@@ -43,46 +44,46 @@ export default class NctApp extends Component {
     };
   }
 
-  nctHandleView = (nctStudent) => {
-    this.setState({ selectedStudent: nctStudent });
-  };
+  // nctHandleView = (nctStudent) => {
+  //   this.setState({ selectedStudent: nctStudent });
+  // };
 
-  nctHandleEdit = (nctStudent) => {
-    this.setState({ selectedStudent: nctStudent });
-  };
-  // NctApp.js
-  updateStudent = (updatedStudent) => {
-    this.setState((prevState) => {
-      const updatedStudents = prevState.nctStudent.map((student) =>
-        student.nctID === updatedStudent.nctID ? updatedStudent : student
-      );
-      return { nctStudent: updatedStudents, selectedStudent: null };
-    });
-  };
-  nctHandleDelete = (nctID) => {
-    if (window.confirm("Bạn có chắc chắn muốn xóa sinh viên này không?")) {
-      this.setState((prevState) => ({
-        nctStudent: prevState.nctStudent.filter(
-          (student) => student.nctID !== nctID
-        ),
-      }));
-    }
-  };
-  nctHandleAddNew = () => {
-    this.setState({ selectedStudent: null, isAddingNew: true });
-  };
+  // nctHandleEdit = (nctStudent) => {
+  //   this.setState({ selectedStudent: nctStudent });
+  // };
+  // // NctApp.js
+  // updateStudent = (updatedStudent) => {
+  //   this.setState((prevState) => {
+  //     const updatedStudents = prevState.nctStudent.map((student) =>
+  //       student.nctID === updatedStudent.nctID ? updatedStudent : student
+  //     );
+  //     return { nctStudent: updatedStudents, selectedStudent: null };
+  //   });
+  // };
+  // nctHandleDelete = (nctID) => {
+  //   if (window.confirm("Bạn có chắc chắn muốn xóa sinh viên này không?")) {
+  //     this.setState((prevState) => ({
+  //       nctStudent: prevState.nctStudent.filter(
+  //         (student) => student.nctID !== nctID
+  //       ),
+  //     }));
+  //   }
+  // };
+  // nctHandleAddNew = () => {
+  //   this.setState({ selectedStudent: null, isAddingNew: true });
+  // };
 
-  nctHandleSubmit = (student) => {
-    if (this.state.isAddingNew) {
-      this.setState((prevState) => ({
-        nctStudent: [...prevState.nctStudent, student],
-        selectedStudent: null,
-        isAddingNew: false,
-      }));
-    } else {
-      this.updateStudent(student);
-    }
-  };
+  // nctHandleSubmit = (student) => {
+  //   if (this.state.isAddingNew) {
+  //     this.setState((prevState) => ({
+  //       nctStudent: [...prevState.nctStudent, student],
+  //       selectedStudent: null,
+  //       isAddingNew: false,
+  //     }));
+  //   } else {
+  //     this.updateStudent(student);
+  //   }
+  // };
   render() {
     return (
       <div>
@@ -92,21 +93,22 @@ export default class NctApp extends Component {
             <div className="row">
               <div className="col-lg-7 grid-margin stretch-card">
                 <div className="card">
-                  <NctControl onAddNewStudent={this.nctHandleAddNew} />
+                  <NctUseMemo />
+                  {/* <NctControl onAddNewStudent={this.nctHandleAddNew} /> */}
                   <NctStudentList
                     renderNctStudent={this.state.nctStudent}
-                    onNctHandleView={this.nctHandleView}
-                    onNctHandleEdit={this.nctHandleEdit} // Thêm hàm chỉnh sửa
-                    onNctHandleDelete={this.nctHandleDelete} //xoa
+                    // onNctHandleView={this.nctHandleView}
+                    // onNctHandleEdit={this.nctHandleEdit} // Thêm hàm chỉnh sửa
+                    // onNctHandleDelete={this.nctHandleDelete} //xoa
                   />
                 </div>
               </div>
-              <div className="col-5 grid-margin">
+              {/* <div className="col-5 grid-margin">
                 <NctForm
                   student={this.state.selectedStudent}
                   updateStudent={this.updateStudent}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

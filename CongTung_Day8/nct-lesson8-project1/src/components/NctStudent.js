@@ -18,7 +18,7 @@ export default class NctStudent extends Component {
         <td>{renderNctStudent.nctAge}</td>
         <td>{renderNctStudent.nctGender}</td>
         <td>
-          <div className="template-demo">
+          {/* <div className="template-demo">
             <button
               type="button"
               className="btn btn-primary btn-icon-text"
@@ -40,7 +40,7 @@ export default class NctStudent extends Component {
             >
               Xóa
             </button>
-          </div>
+          </div> */}
         </td>
       </tr>
     );

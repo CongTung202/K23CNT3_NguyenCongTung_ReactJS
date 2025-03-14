@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+/* NctThemeToggle.css */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.backgroundtheme {
+  background-color: #ffc107; /* Màu vàng */
+  color: white;
+}
+
+.backgroundtheme:hover {
+  background-color: #e0a800; /* Màu vàng đậm khi hover */
+}
+
+.backgroundtheme:focus {
+  outline: none; /* Bỏ viền khi nút được chọn */
+}

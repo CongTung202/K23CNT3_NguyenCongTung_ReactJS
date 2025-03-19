@@ -1,0 +1,27 @@
+.nav {
+  background-color: #007bff; /* Màu nền của thanh điều hướng */
+  padding: 10px; /* Khoảng cách bên trong */
+  border-radius: 5px; /* Bo góc */
+}
+
+.nav ul {
+  list-style-type: none; /* Bỏ dấu chấm đầu dòng */
+  padding: 0; /* Bỏ khoảng cách mặc định */
+  margin: 0; /* Bỏ khoảng cách mặc định */
+}
+
+.nav li {
+  display: inline; /* Hiển thị các mục trong cùng một hàng */
+  margin-right: 20px; /* Khoảng cách giữa các mục */
+}
+
+.nav a {
+  color: white; /* Màu chữ */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-weight: bold; /* Chữ đậm */
+  transition: color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.nav a:hover {
+  color: #ffcc00; /* Màu chữ khi hover */
+}
